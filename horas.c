@@ -2,7 +2,7 @@
 int main ()
 {
 
-	int hora, min,seg;
+	int hora, min, seg;
 	float aux = 5.5;
 
 	printf("Digite, Horas, Minutos e Segundos: ");
@@ -13,7 +13,7 @@ int main ()
 		printf("Quantidase  de segundos: %d \n", (hora * 60 * 60 + min * 60 + seg));
 
 	}else{
-		printf("Quantidade de minutos: %d \n", hora * 60 + min);
+		printf("Quantidade de minutos: %.2f \n", hora * 60 + min + seg / 60.0);
 	}
 
 	printf("Horario: %02d:%02d:%02d\n", hora,min,seg);
