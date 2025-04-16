@@ -19,7 +19,7 @@ int main(){
 		}
 		printf("Números positivos digitados: %d \n", v_p);
 	}
-	printf("Média do valores positivos: %.0f\n", soma_p / v_p);
+	printf("Média do valores positivos: %.1f\n", soma_p / v_p);
 
 
 
