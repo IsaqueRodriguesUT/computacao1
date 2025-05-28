@@ -24,11 +24,11 @@ void criarRaizes(int A[][TAM],int B[][TAM],int n){
 	for(int i=0;i<n;i++){
 		for(int j=0;j<n;j++){
 			B[i][j]= rand() % 101;
-		}
+	}
 	}
 }
 void output(int A[][TAM],int B[][TAM],int n){
-	printf("======Matriz A======");
+	printf("======Matriz A======\n");
 	for(int i=0;i<n;i++){
 		for(int j=0;j<n;j++){
 			printf("%3d ",A[i][j]);
@@ -44,7 +44,16 @@ void output(int A[][TAM],int B[][TAM],int n){
 	}
 }
 void soma(int A[][TAM],int B[][TAM],int n){
-	printf("======Matriz A======\n");
+	printf("======SOMA======\n");
+	for(int i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			printf("%3d ",A[i][j]+B[i][j]);
+		}
+		printf("\n");
+	}
+}	
+void sub(int A[][TAM],int B[][TAM],int n){
+	printf("======SOMA======\n");
 	for(int i=0;i<n;i++){
 		for(int j=0;j<n;j++){
 			printf("%3d ",A[i][j]+B[i][j]);
@@ -52,7 +61,6 @@ void soma(int A[][TAM],int B[][TAM],int n){
 		printf("\n");
 	}
 }
-
 int main(){
 	int opcao,matrizA[TAM][TAM],matrizB[TAM][TAM];
 	
