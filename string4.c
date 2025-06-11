@@ -5,22 +5,42 @@
 #define MAX 1000
 
 void gerar_abreviatura(char *nome, char *abreviatura) {
-    char *token = strtok(nome, " ");
+    int i = 0;
+    int j = 0;
+    int n = strlen(nome);
     
-    while (token != NULL) {
-        if (strlen(token) > 2) {
-            strncat(abreviatura, token, 1);
-            strcat(abreviatura, ". ");
-        } else {
-            strcat(abreviatura, token);
-            strcat(abreviatura, " ");
+    while (i < n) {
+
+        while (i < n && nome[i] == ' ') {
+            i++;
         }
-        token = strtok(NULL, " ");
+
+        if (i >= n) {
+            break;
+        }
+
+
+        int start = i;
+        while (i < n && nome[i] != ' ') {
+            i++;
+        }
+
+        int word_len = i - start;
+        if (word_len > 2) {
+            abreviatura[j++] = toupper(nome[start]);  
+            abreviatura[j++] = '.';                   
+        } else {
+
+            for (int k = start; k < i; k++) {
+                abreviatura[j++] = nome[k];
+            }
+            abreviatura[j++] = ' ';
+        }
     }
-    
-    // Remove o último espaço extra
-    if (abreviatura[strlen(abreviatura) - 1] == ' ') {
-        abreviatura[strlen(abreviatura) - 1] = '\0';
+    if (abreviatura[j - 1] == ' ') {
+        abreviatura[j - 1] = '\0';
+    } else {
+        abreviatura[j] = '\0';
     }
 }
 
@@ -29,7 +49,7 @@ int main() {
 
     printf("Digite o nome completo: ");
     fgets(nome, MAX, stdin);
-    nome[strcspn(nome, "\n")] = '\0';  // Remove o \n da entrada
+    nome[strcspn(nome, "\n")] = '\0';  
 
     gerar_abreviatura(nome, abreviatura);
 
