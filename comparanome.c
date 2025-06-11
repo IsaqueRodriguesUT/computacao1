@@ -27,11 +27,11 @@ int main(){
         	}
 		if (encontrado) {
             		printf("Este nome está entre os três nomes.\n");
-            		return 0;  
+			break;  
         	} else {
             		printf("Este nome não está entre os três nomes.\n");
         	}
     	}
-
+	printf("Fim do progama.");
 	return 0;
 }
