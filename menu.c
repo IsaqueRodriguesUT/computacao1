@@ -53,10 +53,23 @@ void soma(int A[][TAM],int B[][TAM],int n){
 	}
 }	
 void sub(int A[][TAM],int B[][TAM],int n){
-	printf("======SOMA======\n");
+	printf("======SUBTRAÇÂO======\n");
 	for(int i=0;i<n;i++){
 		for(int j=0;j<n;j++){
-			printf("%3d ",A[i][j]+B[i][j]);
+			printf("%3d ",A[i][j]-B[i][j]);
+		}
+		printf("\n");
+	}
+}
+void mult(int A[][TAM],int n){
+	int x;
+
+	printf("Digite uma constante para multiplicar a matriz");
+	scanf("%d",&x);
+	printf("======Multiplicação por %d======\n", x);
+	for(int i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			printf("%3d ",A[i][j]*x);
 		}
 		printf("\n");
 	}
@@ -83,8 +96,21 @@ int main(){
 				soma(matrizA,matrizB,TAM);
 				printf("\n");
 				break;
+			case 3:
+				sub(matrizA,matrizB,TAM);
+				printf("\n");
+				break;
+			case 4:
+				mult(matrizA,TAM);
+				printf("\n");
+				break;
 
 			case 9:
+				printf("Saindo...\n");
+				break;
+			default:
+				printf("Opção invalida! Tente novamente.\n");
+				break;
 
 
 		}
